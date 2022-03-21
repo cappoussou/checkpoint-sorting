@@ -1,0 +1,34 @@
+PROCEDURE InsertionSort(VAR arr : ARRAY_OF INTEGER [])
+VAR
+    i, j, temp : INTEGER;
+    n: INTEGER := arr.length;
+BEGIN
+       FOR ( i:=1; i<n; i++){
+        temp := arr[i];
+        FOR (VAR j:= i-1; j >=0; arr[j]>temp){ 
+            arr[j+1] := arr[j]; 
+            j--;
+        }
+        arr[j+1] := temp;
+    }
+END
+
+ALGORITHM Insertion_sort 
+VAR
+    arr : ARRAY_OF INTEGER[];
+    i :INTEGER;
+    n: INTEGER := arr.length; 
+BEGIN
+
+    Write ("The size of the arrays: ")
+    Read (n);
+  
+    FOR (i :=0; i<n; i++) {
+        Write ("fill in the first vector case "i": ");
+        Read (arr[i]);
+    }
+    END_FOR
+    Write ("unsorted Array : " arr[i])
+   
+    Write ("Sorted array : " InsertionSort(arr) )
+END
